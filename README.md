@@ -36,7 +36,7 @@
 <body>
   <header>
     <img src="tu-foto.jpg" alt="Foto de Nadia" />
-    <h1>¡Hola! Soy Nadia</h1>
+    <h1>¡Hola prroz</h1>
     <p>Bienvenida a mi portafolio personal 🚀</p>
   </header>
 
