@@ -43,7 +43,7 @@
   <section class="social-links">
     <h2>Conéctate conmigo:</h2>
     <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/nadia-orbegozo/" target="_blank">LinkedIn</a>
     <a href="nadia.orbegozo@gmail.com">Email</a>
   </section>
 </body>
