@@ -1,57 +1,184 @@
-<section id="inicio" style="padding:130px 30px; background-color:#FFFAF6;">
-  <h2 style="text-align:center; font-family:'DM Sans', sans-serif; font-weight:700; font-size:40px; color:#d63384; margin-bottom:40px;">
-    Proyectos
-  </h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Nadia</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      background-color: #FFFAF6;
+      color: #333;
+    }
 
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; max-width:1300px; margin:0 auto;">
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: #ff2f71;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 0 30px;
+    }
 
-    <!-- Proyecto 1 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen1.jpg" alt="Notas de Identidad" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">Notas de identidad</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Publicación editorial sobre la etnomusicología peruana.</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">DISEÑO EDITORIAL</p>
+    .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 73px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu {
+      display: flex;
+      gap: 80px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: normal;
+      font-size: 25px;
+    }
+
+    .hero {
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 130px 30px 60px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 22px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      background-color: #d9d9d9;
+    }
+
+    .card h3 {
+      margin-top: 25px;
+      font-size: 25px;
+      font-weight: 800;
+      color: #000;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: #000;
+      margin-top: 10px;
+    }
+
+    .card .categoria {
+      font-size: 16px;
+      color: #636363;
+      margin-top: 10px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    #about {
+      display: none;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#inicio" class="logo">Nadia</a>
+      <div class="menu">
+        <a href="#" onclick="mostrarAbout()">About</a>
+        <a href="#inicio">Proyectos</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Proyecto 2 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen2.jpg" alt="Creando emociones" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">Creando emociones</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Revista sobre la importancia de la educación artística en el nivel inicial.</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">DISEÑO EDITORIAL</p>
+  <section id="inicio" class="hero">
+    <div class="project-grid">
+
+      <div class="card">
+        <img src="imagen1.jpg" alt="Notas de Identidad">
+        <h3>Notas de identidad</h3>
+        <p>Publicación editorial sobre la etnomusicología peruana.</p>
+        <p class="categoria">DISEÑO EDITORIAL</p>
+      </div>
+
+      <div class="card">
+        <img src="imagen2.jpg" alt="Creando emociones">
+        <h3>Creando emociones</h3>
+        <p>Revista sobre la importancia de la educación artística en el nivel inicial.</p>
+        <p class="categoria">DISEÑO EDITORIAL</p>
+      </div>
+
+      <div class="card">
+        <img src="imagen3.jpg" alt="Open city">
+        <h3>Open city</h3>
+        <p>Publicación basada en el artículo de Emma Cocker para Sheffield Hallam.</p>
+        <p class="categoria">DISEÑO EDITORIAL</p>
+      </div>
+
+      <div class="card">
+        <img src="imagen4.jpg" alt="Misk'i raymi">
+        <h3>Misk'i raymi</h3>
+        <p>Identidad visual para marca peruana de turrones artesanales</p>
+        <p class="categoria">IDENTIDAD VISUAL</p>
+      </div>
+
+      <div class="card">
+        <img src="imagen5.jpg" alt="CC Bellas Artes del Perú">
+        <h3>CC BELLAS ARTES DEL PERÚ</h3>
+        <p>Identidad visual y campaña para el Centro Cultural Bellas Artes del Perú</p>
+        <p class="categoria">IDENTIDAD VISUAL</p>
+      </div>
+
+      <div class="card">
+        <img src="imagen6.jpg" alt="Adean Republic">
+        <h3>Adean Republic</h3>
+        <p>Identidad visual y packaging para marca peruana de chocolates</p>
+        <p class="categoria">DISEÑO EDITORIAL; PACKAGING</p>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Proyecto 3 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen3.jpg" alt="Open city" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">Open city</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Publicación basada en el artículo de Emma Cocker para Sheffield Hallam.</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">DISEÑO EDITORIAL</p>
-    </div>
+  <section id="about">
+    <h2 style="color:#d63384;">Sobre mí</h2>
+    <p>📌 <em>Rellenar aquí</em> – esta sección estará lista pronto.</p>
+  </section>
 
-    <!-- Proyecto 4 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen4.jpg" alt="Misk'i raymi" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">Misk'i raymi</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Identidad visual para marca peruana de turrones artesanales</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">IDENTIDAD VISUAL</p>
-    </div>
+  <script>
+    function mostrarAbout() {
+      document.getElementById("about").style.display = "block";
+      document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 
-    <!-- Proyecto 5 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen5.jpg" alt="CC BELLAS ARTES DEL PERÚ" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">CC BELLAS ARTES DEL PERÚ</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Identidad visual y campaña para el Centro Cultural Bellas Artes del Perú</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">IDENTIDAD VISUAL</p>
-    </div>
-
-    <!-- Proyecto 6 -->
-    <div style="background-color:#fff; border-radius:22px; box-shadow:0 4px 20px rgba(0,0,0,0.1); padding:30px; font-family:'DM Sans', sans-serif;">
-      <img src="imagen6.jpg" alt="Adean Republic" style="width:100%; height:auto; border-radius:15px; background:#d9d9d9;">
-      <h3 style="margin-top:25px; font-size:25px; font-weight:800; color:#000;">Adean Republic</h3>
-      <p style="font-size:18px; color:#000; margin-top:10px;">Identidad visual y packaging para marca peruana de chocolates</p>
-      <p style="font-size:16px; color:#636363; margin-top:10px; font-family:'DM Mono', monospace;">DISEÑO EDITORIAL; PACKAGING</p>
-    </div>
-
-  </div>
-</section>
+</body>
+</html>
