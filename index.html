@@ -140,7 +140,7 @@
   <div class="navbar-inner">
     <a href="#hero" class="logo">Nadia</a>
     <div class="menu">
-      <a href="#about">About</a>
+    <a href="#" onclick="mostrarAbout()">About</a>
       <a href="#proyectos">Proyectos</a>
     </div>
   </div>
@@ -151,7 +151,7 @@
     <p>Bienvenido al papuportafolio :V #contrátenmeprros</p>
   </section>
 
-  <section id="about" style="padding:60px 20px; text-align:center;">
+  <section id="about" style="display:none; padding:60px 20px; text-align:center;">
     <h2 style="color:#d63384;">Sobre mí</h2>
     <p>:v <em>Rellenar aquí</em> – esta sección estará lista pronto.</p>
   </section>
@@ -191,6 +191,12 @@
 
     </div>
   </section>
+<script>
+  function mostrarAbout() {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("about").style.display = "block";
+  }
+</script>
 
 </body>
 </html>
