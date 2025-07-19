@@ -6,6 +6,16 @@
   <title>Portafolio de Nadia</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
   <style>
+    
+    .navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
     body {
       font-family: 'DM Sans', sans-serif;
       margin: 0;
@@ -22,10 +32,21 @@
       background-color: #ffd6e0;
       display: flex;
       justify-content: space-between;
+      padding: 15px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
       align-items: center;
       padding: 15px 30px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
+    .navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 
     .logo {
       font-size: 24px;
@@ -115,13 +136,15 @@
 </head>
 <body>
 
-  <nav class="navbar">
+<nav class="navbar">
+  <div class="navbar-inner">
     <a href="#hero" class="logo">Nadia</a>
     <div class="menu">
       <a href="#about">About</a>
       <a href="#proyectos">Proyectos</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <section id="hero" class="hero">
     <h1>Hola papus</h1>
