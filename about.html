@@ -33,6 +33,8 @@
       font-size: 40px;
       color: #ff0052;
       opacity: 0.9;
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
     }
 
     nav a {
@@ -42,15 +44,38 @@
       text-decoration: underline;
       font-style: italic;
       font-weight: 300;
+      font-family: 'DM Mono', monospace;
+      cursor: pointer;
     }
 
-main {
-  padding-top: calc(89px + 20px); /* 89px es la altura del header fijo, 20px es margen editorial */
-  padding-bottom: 60px;
-  max-width: 900px;
-  margin: 0 auto;
-}
+    .fullscreen-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
 
+    .fullscreen-menu a {
+      font-family: 'DM Mono', monospace;
+      font-size: 20px;
+      color: #ff0052;
+      text-decoration: underline;
+      margin: 20px 0;
+    }
+
+    main {
+      padding-top: calc(89px + 20px);
+      padding-bottom: 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
     h2 {
       font-size: 30px;
@@ -122,74 +147,30 @@ main {
         margin-left: 20px;
       }
     }
-    .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  margin-left: 40px;
-  font-size: 18px;
-  color: #ff0052;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: 300;
-  cursor: pointer;
-  font-family: 'DM Mono', monospace;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  z-index: 1001;
-}
-
-.dropdown-content a {
-  display: block;
-  color: #ff0052;
-  text-decoration: underline;
-  font-family: 'DM Mono', monospace;
-  font-size: 20px;
-  padding: 10px 0;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
   </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html" class="logo">Nadia</a>
-  <nav>
-    <a href="about.html">About</a>
-    <div class="dropdown">
-      <a class="dropbtn">Proyectos</a>
-      <div class="dropdown-content">
-        <a href="diseno-grafico.html">Diseño gráfico</a>
-        <a href="ilustracion.html">Ilustración</a>
-      </div>
-    </div>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-</header>
+  <header>
+    <a href="index.html" class="logo">Nadia</a>
+    <nav>
+      <a href="about.html">About</a>
+      <a onclick="toggleMenu()">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
 
-
+  <div class="fullscreen-menu" id="menuOverlay">
+    <a href="diseno-grafico.html">Diseño gráfico</a>
+    <a href="ilustracion.html">Ilustración</a>
+  </div>
 
   <main>
     <h2>Sobre mí</h2>
 
     <div class="columns">
       <div class="left">
-        <h3>
-          Soy Nadia Orbegozo, diseñadora gráfica con enfoque en diseño editorial y comunicación visual.
-        </h3>
+        <h3>Soy Nadia Orbegozo, diseñadora gráfica con enfoque en diseño editorial y comunicación visual.</h3>
         <p>
           Actualmente curso el último año de Diseño Gráfico en la UPC (Perú) y he complementado mi formación internacional en Sheffield Hallam University (Reino Unido). Me especializo en crear sistemas visuales claros y funcionales, desde piezas editoriales hasta soluciones gráficas aplicadas a la comunicación interna y externa de organizaciones.<br><br>
           Busco que el diseño no solo conecte visualmente, sino que también resuelva necesidades concretas, optimice procesos y aporte valor a la experiencia comunicativa. Combino una mirada estratégica con sensibilidad estética y narrativa, usando el diseño como una herramienta para ordenar, emocionar y comunicar con propósito.
@@ -216,6 +197,15 @@ main {
     </div>
   </main>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuOverlay");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      if (menu.style.display === "flex") {
+        menu.style.flexDirection = "column";
+      }
+    }
+  </script>
+
 </body>
 </html>
-
