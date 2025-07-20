@@ -60,6 +60,7 @@
       justify-content: center;
       align-items: center;
       z-index: 2000;
+      transition: opacity 0.3s ease;
     }
 
     .fullscreen-menu a {
@@ -200,32 +201,23 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menuOverlay");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-      if (menu.style.display === "flex") {
+      const isVisible = menu.style.display === "flex";
+      menu.style.display = isVisible ? "none" : "flex";
+      if (!isVisible) {
         menu.style.flexDirection = "column";
       }
     }
+
+    window.addEventListener("click", function (e) {
+      const menu = document.getElementById("menuOverlay");
+      const isInsideMenu = menu.contains(e.target);
+      const isMenuButton = e.target.textContent === "Proyectos";
+
+      if (menu.style.display === "flex" && !isInsideMenu && !isMenuButton) {
+        menu.style.display = "none";
+      }
+    });
   </script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menuOverlay");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    if (menu.style.display === "flex") {
-      menu.style.flexDirection = "column";
-    }
-  }
-
-  // Cierra el menú si se hace clic fuera de los enlaces
-  window.addEventListener("click", function (e) {
-    const menu = document.getElementById("menuOverlay");
-    const isInsideMenu = menu.contains(e.target);
-    const isMenuButton = e.target.textContent === "Proyectos";
-
-    if (menu.style.display === "flex" && !isInsideMenu && !isMenuButton) {
-      menu.style.display = "none";
-    }
-  });
-</script>
 
 </body>
 </html>
