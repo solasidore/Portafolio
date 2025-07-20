@@ -58,12 +58,13 @@
       margin-bottom: 60px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      justify-items: center;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
 
     .card {
       width: 299px;
