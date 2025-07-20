@@ -1,1 +1,80 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowUp } from "lucide-react";
+import React from "react";
+
+const MiskiRaymi = (): JSX.Element => {
+  return (
+    <div className="relative bg-white overflow-x-hidden min-h-screen">
+      {/* Header fijo con enlaces reales */}
+      <header className="fixed w-full top-0 z-50 bg-white shadow-[0px_4px_12.1px_-2px_#ff00524c]">
+        <div className="container mx-auto px-4 h-[89px] flex items-center justify-between">
+          <h1 className="opacity-90 font-black text-[#ff0052] text-[40px] font-sans">
+            Nadia
+          </h1>
+          <nav className="flex gap-8">
+            <a href="/about.html" className="font-light italic text-[#ff0052] text-lg underline font-mono">
+              About
+            </a>
+            <a href="/index.html" className="font-light italic text-[#ff0052] text-lg underline font-mono">
+              Proyectos
+            </a>
+            <a href="/contacto.html" className="font-light italic text-[#ff0052] text-lg underline font-mono">
+              Contacto
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Contenido principal */}
+      <main className="container mx-auto px-4 pt-[120px] pb-16">
+        <div className="mb-8">
+          <span className="font-medium text-[#ff0052] text-[15px] font-mono block">
+            Identidad visual - Packaging
+          </span>
+          <h2 className="font-medium text-black text-[70px] mt-2 font-mono">
+            Miski Raymi
+          </h2>
+        </div>
+
+        <Card className="border-none mb-12">
+          <CardContent className="p-0">
+            <p className="font-normal text-black text-xl font-sans">
+              Un ejercicio de branding dulce y funcional. misk’i raymi nace de la idea de reconectar con lo natural desde lo cotidiano: un turrón que se aleja del exceso y se acerca a lo esencial. Este proyecto transmite valores como calidez, honestidad y bienestar. El empaque integral en tonos marrón y naranja refuerza la conexión con lo nutritivo y lo auténtico. La tipografía —de trazo limpio y cálido, con ecos editoriales— acompaña la narrativa sin sobrecargarla, manteniendo legibilidad y carácter. Desde el sistema modular hasta las decisiones de layout, el diseño celebra lo artesanal con una estética sobria y estructurada.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Imagen principal */}
+        <img
+          src="/miskipag.jpg"
+          alt="Miski Raymi packaging"
+          className="w-full h-[680px] object-cover"
+        />
+
+        {/* Botón volver arriba */}
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="font-black text-[#ff0052] text-[40px] font-sans"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp />
+          </button>
+        </div>
+
+        {/* Volver a proyectos */}
+        <div className="mt-12 text-center">
+          <a
+            href="/index.html"
+            className="font-light italic text-[#ff0052] text-lg underline font-mono"
+          >
+            ← Volver a proyectos
+          </a>
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default MiskiRaymi;
 
