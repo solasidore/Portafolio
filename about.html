@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mí - Nadia</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre mí — Portafolio de Nadia</title>
   <link rel="stylesheet" href="styles.css">
-  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,73 +13,53 @@
     <a href="index.html" class="logo">Nadia</a>
     <nav>
       <a href="about.html">About</a>
-      <a onclick="toggleMenu()">Proyectos</a>
+      <a href="index.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <div class="fullscreen-menu" id="menuOverlay">
-    <span class="close-menu" onclick="closeMenu()">X</span>
-    <a href="diseno-grafico.html">Diseño gráfico</a>
-    <a href="ilustracion.html">Ilustración</a>
-  </div>
-
   <main>
-    <h2>Sobre mí</h2>
-
-    <div class="columns">
-      <div class="left">
-        <h3>Soy Nadia Orbegozo, diseñadora gráfica con enfoque en diseño editorial y comunicación visual.</h3>
+    <div class="about-container">
+      
+      <div class="about-left">
+        <h1>Sobre mi</h1>
+        <p class="intro-text">
+          Soy Nadia Orbegozo, diseñadora gráfica enfocada en branding y diseño editorial.
+        </p>
         <p>
-          Actualmente curso el último año de Diseño Gráfico en la UPC (Perú) y he complementado mi formación internacional en Sheffield Hallam University (Reino Unido). Me especializo en crear sistemas visuales claros y funcionales, desde piezas editoriales hasta soluciones gráficas aplicadas a la comunicación interna y externa de organizaciones.<br><br>
-          Busco que el diseño no solo conecte visualmente, sino que también resuelva necesidades concretas, optimice procesos y aporte valor a la experiencia comunicativa. Combino una mirada estratégica con sensibilidad estética y narrativa, usando el diseño como una herramienta para ordenar, emocionar y comunicar con propósito.
+          Curso el último año en la UPC (Perú), complementando mi formación internacional en Sheffield Hallam University (UK) y cursos artísticos online. Me especializo en crear sistemas visuales claros y funcionales.
+        </p>
+        <p>
+          Combino una mirada estratégica con sensibilidad estética y narrativa, usando el diseño como una herramienta para ordenar, emocionar y comunicar con propósito, aportando valor a la experiencia comunicativa.
         </p>
       </div>
 
-      <div class="right">
-        <h3>Experiencia:</h3>
-        <div class="card">
-          <h4>Practicante de diseño gráfico</h4>
-          <p>Universidad Esan – Esan Labs<br>(Ago. 2024 – Actualidad)</p>
+      <div class="about-right">
+        
+        <div class="cv-section">
+          <h3>Experiencia:</h3>
+          <ul>
+            <li>Practicante de diseño gráfico</li>
+            <li>Universidad Esan – Esan Labs</li>
+            <li>(Ago. 2024 – Actualidad)</li>
+          </ul>
         </div>
 
-        <h3>Educación:</h3>
-        <div class="card">
-          <h4>Bachiller Diseño Gráfico</h4>
-          <p>Universidad Peruana de Ciencias Aplicadas<br>2021–2026</p>
+        <div class="cv-section">
+          <h3>Educación:</h3>
+          <ul>
+            <li>Bachiller Diseño Gráfico</li>
+            <li>Universidad Peruana de Ciencias Aplicadas</li>
+            <li>2021-2026</li>
+          </ul>
+          <ul>
+            <li>Diseño Gráfico en la producción</li>
+            <li>Sheffield Hallam University – Programa de Intercambio</li>
+            <li>2024</li>
+          </ul>
         </div>
-        <div class="card">
-          <h4>Diseño Gráfico en la producción</h4>
-          <p>Sheffield Hallam University – Programa de Intercambio<br>2024</p>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menuOverlay");
-      const isVisible = menu.style.display === "flex";
-      menu.style.display = isVisible ? "none" : "flex";
-      if (!isVisible) {
-        menu.style.flexDirection = "column";
-      }
-    }
-
-    function closeMenu() {
-      document.getElementById("menuOverlay").style.display = "none";
-    }
-
-    window.addEventListener("click", function (e) {
-      const menu = document.getElementById("menuOverlay");
-      const isInsideMenu = menu.contains(e.target);
-      const isMenuButton = e.target.textContent === "Proyectos";
-
-      if (menu.style.display === "flex" && !isInsideMenu && !isMenuButton) {
-        menu.style.display = "none";
-      }
-    });
-  </script>
+      </div> </div> </main>
 
 </body>
 </html>

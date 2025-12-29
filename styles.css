@@ -48,6 +48,13 @@ nav a {
 main {
   padding-top: 130px; /* Espacio para que no se tape con el header */
   padding-bottom: 60px;
+  
+  /* --- AJUSTE PARA MÓVIL (Márgenes laterales) --- */
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box; /* Esto evita que el padding rompa el ancho */
+  /* ----------------------------------------------- */
+
   max-width: 1200px; /* Ancho máximo estándar */
   margin: 0 auto;
   text-align: center; /* Centrado por defecto */
@@ -232,4 +239,111 @@ main img {
   font-weight: 300;
   margin-top: 20px;
   color: #666;
+}
+
+/* =========================================
+   4. ESTILOS ESPECÍFICOS DE "ABOUT"
+   ========================================= */
+
+/* Contenedor principal que crea las dos columnas */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el contenido arriba */
+  gap: 60px; /* Espacio grande entre la columna de texto y la del CV */
+  max-width: 1000px; /* Un ancho de lectura cómodo */
+  margin: 0 auto;
+  text-align: left; /* ¡IMPORTANTE! Esto anula el centrado global */
+  padding-top: 40px;
+}
+
+/* --- Columna Izquierda (Bio y Título) --- */
+.about-left {
+  flex: 1; /* Ocupa espacio flexible */
+  max-width: 450px; /* Ancho máximo para que el texto no sea muy largo */
+}
+
+.about-left h1 {
+  font-family: 'DM Mono', monospace; /* Fuente del título según diseño */
+  font-size: 50px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Estilos para los párrafos de la bio */
+.about-left p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #333;
+  /* Reseteamos márgenes globales que podrían molestar */
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+/* Párrafo introductorio en negrita */
+.intro-text {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* --- Columna Derecha (Experiencia y Educación) --- */
+.about-right {
+  flex: 1;
+  max-width: 450px;
+  /* Aquí está la magia de la LÍNEA ROSADA vertical */
+  border-left: 4px solid #ff0052;
+  padding-left: 40px; /* Espacio entre la línea y el texto */
+  font-family: 'DM Mono', monospace; /* Toda esta columna usa la fuente mono */
+}
+
+.about-right h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  margin-top: 0;
+  color: #333;
+}
+
+/* Bloques de sección (Experiencia / Educación) */
+.cv-section {
+  margin-bottom: 50px;
+}
+
+/* Listas sin puntitos */
+.about-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0; /* Espacio entre bloques de universidad/intercambio */
+}
+
+.about-right li {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 5px;
+  color: #444; /* Un gris un poquito más suave para el texto secundario */
+}
+
+/* --- Versión Móvil (Responsivo) --- */
+@media (max-width: 850px) {
+  .about-container {
+    flex-direction: column; /* Pone una columna debajo de la otra */
+    gap: 40px;
+  }
+
+  .about-left, .about-right {
+    max-width: 100%; /* Que ocupen todo el ancho en celular */
+  }
+
+  .about-right {
+    border-left: none; /* Quita la línea vertical */
+    border-top: 4px solid #ff0052; /* Pone la línea horizontal arriba */
+    padding-left: 0;
+    padding-top: 30px;
+  }
 }
