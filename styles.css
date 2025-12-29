@@ -347,3 +347,49 @@ main img {
     padding-top: 30px;
   }
 }
+
+/* =========================================
+   5. ESTILOS DE CONTACTO
+   ========================================= */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; /* Para que quede centrado verticalmente en la pantalla */
+  gap: 30px;
+}
+
+.contact-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-links {
+  display: flex;
+  gap: 30px; /* Espacio entre los botones */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-contact {
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 24px;
+  color: #ff0052;
+  border: 2px solid #ff0052;
+  padding: 15px 40px;
+  border-radius: 50px; /* Bordes redondeados */
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #ff0052;
+  color: white;
+  transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+  box-shadow: 0 10px 20px rgba(255, 0, 82, 0.2);
+}
